@@ -1,0 +1,65 @@
+[task]
+name = "afterquery/reversible-markov-green"
+description = """
+Complete a Lean 4 formalization of a finite-state reversible Markov generator. Under detailed balance, prove a discrete Green identity and derive weighted mass conservation and self-adjointness. Under nonnegative weights and rates, also establish nonnegativity of the diagonal Dirichlet form and nonpositivity of the generator energy.
+"""
+authors = [
+  { name = "Shuang Gao", email = "rebecca.shuang@gmail.com" }
+]
+keywords = [
+  "Lean",
+  "formal mathematics",
+  "Markov chains",
+  "detailed balance",
+  "Green identity",
+  "Dirichlet form",
+  "finite sums",
+  "theorem proving"
+]
+
+[metadata]
+author_name = "Rebecca Shuang Gao"
+author_email = "rebecca.shuang@gmail.com"
+author_organization = "Independent researcher"
+author_profile = "https://linkedin.com/in/rebecca-shuang-gao/"
+conflicts_of_interest = "None"
+category = "Science"
+tags = [
+  "Lean",
+  "formal mathematics",
+  "reversible Markov chains",
+  "detailed balance",
+  "Dirichlet forms",
+  "finite-state systems",
+  "theorem proving"
+]
+expert_time_estimate_hours = 6
+relevant_experience = """
+The author has experience with mathematical formalization, scientific computing, signal processing, numerical methods, and Lean-based theorem proving.
+"""
+difficulty_explanation = """
+The mathematical identities are classical, but their Lean formalization requires nontrivial rearrangement of nested finite sums, reversal of indices under detailed balance, algebraic normalization, theorem reuse, and order reasoning for nonnegative finite sums.
+"""
+solution_explanation = """
+The reference solution expands the weighted generator pairing, reverses the two finite summation indices using detailed balance, and derives the discrete Green identity. It then obtains mass conservation and self-adjointness from that identity, proves diagonal Dirichlet-form nonnegativity term by term, and uses the Green identity to conclude nonpositivity of generator energy.
+"""
+verification_explanation = """
+The verifier checks all five exact theorem names and signatures, rejects sorry, admit, and explicit user-defined axioms, compiles the submitted Lean file, and audits the axiom footprint of every required theorem.
+"""
+domain = "mathematical-sciences"
+field = "formal-mathematics"
+subfield = "probability-and-analysis"
+subcategory = "Finite Markov Processes & Theorem Proving"
+
+[agent]
+timeout_sec = 28800
+
+[verifier]
+environment_mode = "separate"
+timeout_sec = 600
+
+[environment]
+network_mode = "public"
+
+[verifier.environment]
+network_mode = "no-network"
