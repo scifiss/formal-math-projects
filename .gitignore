@@ -1,0 +1,21 @@
+# Lean and Lake build output
+.lake/
+**/.lake/
+*.olean
+*.ilean
+
+# Python caches
+__pycache__/
+*.py[cod]
+
+# Logs and local reports
+*.log
+logs/
+**/logs/
+
+# Editor and operating-system files
+.DS_Store
+.vscode/
+
+# Local archives
+*.zip

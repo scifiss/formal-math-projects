@@ -1,0 +1,62 @@
+[task]
+name = "afterquery/cyclic-fourier-convolution"
+description = """
+Complete a Lean 4 formalization of the cyclic convolution theorem for a finite cyclic Fourier transform. The supplied project defines cyclicDFT, cyclicIDFT, and cyclicConvolution on ZMod N. The submission must prove that the Fourier transform of cyclic convolution is the pointwise product of the transforms.
+"""
+authors = [
+  { name = "Shuang Gao", email = "rebecca.shuang@gmail.com" }
+]
+keywords = [
+  "Lean",
+  "formal mathematics",
+  "Fourier transform",
+  "cyclic convolution",
+  "finite cyclic groups",
+  "theorem proving"
+]
+
+[metadata]
+author_name = "Rebecca Shuang Gao"
+author_email = "rebecca.shuang@gmail.com"
+author_organization = "Independent researcher"
+author_profile = "https://linkedin.com/in/rebecca-shuang-gao/"
+conflicts_of_interest = "None"
+category = "Science"
+tags = [
+  "Lean",
+  "formal mathematics",
+  "Fourier analysis",
+  "cyclic convolution",
+  "finite groups",
+  "theorem proving"
+]
+expert_time_estimate_hours = 4
+relevant_experience = """
+The author has experience with mathematical formalization, signal processing, Fourier methods, scientific computing, and Lean-based theorem proving.
+"""
+difficulty_explanation = """
+The mathematical result is standard, but the Lean proof requires finite-sum rearrangement, reindexing over ZMod, additive-character identities, and factorization of nested finite sums.
+"""
+solution_explanation = """
+The reference solution expands the Fourier transform of cyclic convolution, exchanges the finite sums, reindexes the inner sum by translation in ZMod, uses additivity of the character, and factors the resulting double sum into the product of the two Fourier transforms.
+"""
+verification_explanation = """
+The verifier checks the exact theorem name and type, rejects sorry, admit, and user-defined axioms, compiles the submitted Lean file, and audits the axioms used by the required declaration.
+"""
+domain = "mathematical-sciences"
+field = "formal-mathematics"
+subfield = "formalized mathematics"
+subcategory = "Formal Mathematics & Theorem Proving"
+
+[agent]
+timeout_sec = 28800
+
+[verifier]
+environment_mode = "separate"
+timeout_sec = 600
+
+[environment]
+network_mode = "public"
+
+[verifier.environment]
+network_mode = "no-network"

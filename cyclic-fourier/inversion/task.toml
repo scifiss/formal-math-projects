@@ -1,0 +1,70 @@
+[task]
+name = "afterquery/cyclic-fourier-inversion"
+description = """
+Complete a Lean 4 formalization of Fourier inversion on a finite cyclic group.
+The supplied project defines the cyclic discrete Fourier transform and its
+normalized inverse on ZMod N. The submission must prove inverse-after-forward
+recovery and injectivity of the forward transform.
+"""
+authors = [
+  { name = "Rebecca Shuang Gao", email = "rebecca.shuang@gmail.com" }
+]
+keywords = [
+  "Lean",
+  "formal mathematics",
+  "Fourier inversion",
+  "finite cyclic groups",
+  "theorem proving"
+]
+
+[metadata]
+author_name = "Rebecca Shuang Gao"
+author_email = "rebecca.shuang@gmail.com"
+author_organization = "Independent researcher"
+author_profile = "https://linkedin.com/in/rebecca-shuang-gao/"
+conflicts_of_interest = "None"
+category = "Science"
+tags = [
+  "Lean",
+  "formal mathematics",
+  "Fourier analysis",
+  "finite groups",
+  "theorem proving"
+]
+expert_time_estimate_hours = 4
+relevant_experience = """
+The author has experience with mathematical formalization, signal processing,
+Fourier methods, scientific computing, and Lean-based theorem proving.
+"""
+difficulty_explanation = """
+The mathematical result is standard, but the Lean proof requires finite-sum
+rearrangement, additive-character orthogonality, ZMod indexing, complex-number
+normalization, and an axiom-footprint check.
+"""
+solution_explanation = """
+The reference solution expands the inverse transform applied to the forward
+transform, applies primitive-character orthogonality, collapses the diagonal
+kernel, cancels the nonzero cardinality factor, and derives injectivity.
+"""
+verification_explanation = """
+The verifier checks the exact theorem names and types, rejects sorry, admit,
+and user-defined axioms, compiles the submitted Lean file, and audits the
+axioms used by the required declarations.
+"""
+domain = "mathematical-sciences"
+field = "formal-mathematics"
+subfield = "formalized mathematics"
+subcategory = "Formal Mathematics & Theorem Proving"
+
+[agent]
+timeout_sec = 28800
+
+[verifier]
+environment_mode = "separate"
+timeout_sec = 28800
+
+[environment]
+network_mode = "public"
+
+[verifier.environment]
+network_mode = "no-network"
