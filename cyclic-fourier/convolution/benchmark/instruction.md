@@ -1,5 +1,10 @@
 # Finite Cyclic Fourier Convolution in Lean 4
 
+> Archived verbatim from the original benchmark prompt, preserved here only
+> so the verifier setup in this folder remains reproducible. The completed
+> proof and its writeup live in [`../proof/Convolution.lean`](../proof/Convolution.lean)
+> and [`../README.md`](../README.md).
+
 Complete the Lean proof of the cyclic convolution theorem for the finite cyclic Fourier transform.
 
 The public project defines:

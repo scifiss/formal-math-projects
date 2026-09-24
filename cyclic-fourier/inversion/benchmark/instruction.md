@@ -1,5 +1,10 @@
 # Finite Cyclic Fourier Inversion in Lean 4
 
+> Archived verbatim from the original benchmark prompt, preserved here only
+> so the verifier setup in this folder remains reproducible. The completed
+> proof and its writeup live in [`../proof/Inversion.lean`](../proof/Inversion.lean)
+> and [`../README.md`](../README.md).
+
 Complete the Lean proof for Fourier inversion on a finite cyclic group.
 
 The public project defines:
