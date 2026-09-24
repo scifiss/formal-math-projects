@@ -1,10 +1,17 @@
-# Cyclic Fourier Formalization
+# Cyclic Fourier Analysis in Lean 4
 
-Two Lean 4 projects over `ZMod N` with complex additive characters:
+Formalizations of finite Fourier analysis over `ZMod N` using complex-valued
+additive characters. Both projects build on the same small library
+(`CyclicFourier.Basic`), which defines the discrete Fourier transform, its
+normalized inverse, and cyclic convolution.
 
-- `inversion/` proves Fourier inversion and injectivity of the cyclic DFT.
-- `convolution/` proves that the cyclic DFT turns convolution into pointwise multiplication.
+- [`inversion/`](inversion) — Fourier inversion and injectivity of the
+  discrete Fourier transform.
+- [`convolution/`](convolution) — the cyclic convolution theorem: the
+  Fourier transform turns convolution into pointwise multiplication.
 
-Each subproject is self-contained with its pinned Lean environment, reference proof, instructions, and verifier.
-
-The convolution reference uses the same character-orthogonality and inversion lemmas as the inversion project, but the two task packages remain separate for independent study and verification.
+Each project is a self-contained Lean package at its own root (`lakefile.toml`,
+`lean-toolchain`, `CyclicFourier/`), with the completed proof under `proof/`.
+Benchmark packaging originally used to pose and mechanically verify each
+result is preserved under each project's `benchmark/` directory for
+reproducibility.

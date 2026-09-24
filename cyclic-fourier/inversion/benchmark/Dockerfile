@@ -13,8 +13,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 WORKDIR /app
 
-# Copy only the agent-visible environment.
-COPY environment/ /app/
+# Build context is the project root (one level above benchmark/).
+COPY lakefile.toml lake-manifest.json lean-toolchain CyclicFourier.lean /app/
+COPY CyclicFourier/ /app/CyclicFourier/
 
 RUN curl https://elan.lean-lang.org/elan-init.sh -sSf | sh -s -- -y
 
