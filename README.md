@@ -1,7 +1,6 @@
 # Formal Mathematics Projects
 
-A collection of formal mathematics research and verified implementations,
-developed using Lean 4, Mathlib, and related computational tools.
+A collection of formal and computational mathematics research, experiments, and verified implementations using Lean 4, Mathlib, computer algebra systems, and related scientific-computing tools.
 
 Each project in this repository formalizes a mathematical result — a theorem,
 identity, or exact computation — and includes:

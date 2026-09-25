@@ -43,8 +43,7 @@ are in [`method/`](method):
 The certificate itself — a monic univariate eliminant together with one
 recovery polynomial per public variable — is in
 [`certificate/reference_certificate.json`](certificate/reference_certificate.json).
-It was produced by computing a degree-order Gröbner basis of the public
-ideal and converting it to lexicographic elimination form via FGLM.
+The final instance was calibrated so that degree-order Gröbner computation followed by FGLM recovers the elimination structure in about 4 seconds, while direct lexicographic elimination exceeded 60 seconds in local benchmarks, making algorithm selection materially important.
 
 ## Verification
 
