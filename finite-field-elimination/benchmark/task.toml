@@ -1,0 +1,61 @@
+[task]
+name = "afterquery/finite-field-elimination"
+description = """
+Recover an exact elimination certificate for a custom zero-dimensional multivariate polynomial system over a prime finite field. The submission must provide a monic univariate eliminant in an auxiliary parameter together with recovery polynomials for every public variable. Correctness is checked semantically using exact finite-field arithmetic against the original system and sealed ground truth.
+"""
+authors = [
+  { name = "Shuang Gao", email = "rebecca.shuang@gmail.com" }
+]
+keywords = [
+  "computational algebra",
+  "finite fields",
+  "Groebner bases",
+  "polynomial systems",
+  "symbolic computation",
+  "elimination"
+]
+
+[metadata]
+author_name = "Rebecca Shuang Gao"
+author_email = "rebecca.shuang@gmail.com"
+author_organization = "Independent researcher"
+author_profile = "https://linkedin.com/in/rebecca-shuang-gao/"
+conflicts_of_interest = "None"
+category = "Science"
+tags = [
+  "computational algebra",
+  "finite fields",
+  "symbolic computation",
+  "polynomial systems",
+  "exact verification"
+]
+expert_time_estimate_hours = 6
+relevant_experience = """
+The author has experience with mathematical formalization, scientific computing, numerical methods, signal processing, and exact computational verification workflows.
+"""
+difficulty_explanation = """
+The public system is a coupled zero-dimensional polynomial system over a finite field. A direct lexicographic Groebner-basis computation is substantially slower on the frozen instance, while an informed degree-order basis followed by zero-dimensional elimination is tractable. The task requires selecting an effective symbolic-algebra strategy and producing an exact semantic certificate rather than an approximate numerical answer.
+"""
+solution_explanation = """
+The reference workflow computes a degree-order Groebner basis of the public ideal and converts the resulting zero-dimensional basis to lexicographic elimination form. The recovered univariate eliminant and coordinate-recovery relations are encoded as a compact certificate in the auxiliary parameter s.
+"""
+verification_explanation = """
+The verifier parses the submitted certificate, enumerates all roots of its monic eliminant in F_1009, reconstructs every public solution point, checks the auxiliary parameter relation, evaluates every public polynomial exactly modulo 1009, verifies distinctness, and compares the represented point set with sealed ground truth. Verification uses exact integer arithmetic and no floating-point tolerances.
+"""
+domain = "mathematical-sciences"
+field = "formal-mathematics"
+subfield = "computational-algebra"
+subcategory = "Formal Mathematics & Theorem Proving"
+
+[agent]
+timeout_sec = 28800
+
+[verifier]
+environment_mode = "separate"
+timeout_sec = 600
+
+[environment]
+network_mode = "public"
+
+[verifier.environment]
+network_mode = "no-network"
